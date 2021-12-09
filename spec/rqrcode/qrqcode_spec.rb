@@ -5,8 +5,8 @@ describe 'RQRCode' do
   it 'must provide a custom to_s' do
     qr = RQRCode::QRCode.new('http://kyan.com', size: 3)
     expect(qr.to_s[0..50]).to eq("xxxxxxx   x x  xxx    xxxxxxx\nx     x  xxxxx  x x  ")
-    expect(qr.to_s(true: 'q', false: 'n')[0..36]).to eq("qqqqqqqnnnqnqnnqqqnnnnqqqqqqq\nqnnnnnq")
-    expect(qr.to_s(true: '@')[0..21]).to eq("@@@@@@@   @ @  @@@    ")
+    expect(qr.to_s(dark: 'q', light: 'n')[0..36]).to eq("qqqqqqqnnnqnqnnqqqnnnnqqqqqqq\nqnnnnnq")
+    expect(qr.to_s(dark: '@')[0..21]).to eq("@@@@@@@   @ @  @@@    ")
   end
 
   it 'must expose the core qrcode' do
